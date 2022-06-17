@@ -21,6 +21,7 @@
   border-bottom: 1px solid lightgrey;
   background-color: #6eb6fd;
   display: grid;
+  place-content: center;
   }
   
   .post .body{

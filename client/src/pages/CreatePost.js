@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage, useField } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import "../stylesheets/CreatePost.css";
 
@@ -19,6 +20,7 @@ const MyTextArea = ({ label, ...props }) => {
 };
 
 const CreatePost = () => {
+  let navigate = useNavigate();
   const intitialValues = {
     title: "",
     posts: "",
@@ -34,8 +36,9 @@ const CreatePost = () => {
       .required("*Username is required"),
   });
 
-  const onSubmit = (data) => {
-    axios.post("http://localhost:3001/posts", data);
+  const onSubmit = async (data) => {
+    await axios.post("http://localhost:3001/posts", data);
+    navigate("/");
   };
 
   return (
