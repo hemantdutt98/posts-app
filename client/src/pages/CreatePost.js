@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage, useField } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 import "../stylesheets/CreatePost.css";
 
 const MyTextArea = ({ label, ...props }) => {
@@ -21,6 +20,7 @@ const MyTextArea = ({ label, ...props }) => {
 
 const CreatePost = () => {
   let navigate = useNavigate();
+
   const intitialValues = {
     title: "",
     posts: "",
